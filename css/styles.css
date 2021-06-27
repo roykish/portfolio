@@ -1,0 +1,366 @@
+/*
+Template Name : HTML5 FILE STRUCTURE;
+Description: HTML5 / CSS3 / JQuery Multi Page
+Author: Elias.
+*/
+
+/*------------------------------------------------------------------
+Table of contents :
+------------------
+
+i. HOMEPAGE
+	1. Header :
+		1.1. Logo / Brand
+		1.2. Navigation / Menu Bar
+	2. Content :
+		2.1. User Profile
+		2.2. User Uploading & Notification
+		2.3. User Collection
+		2.4. Sidebar Video Content
+		2.5. Load More Button
+	3. Footer :
+		3.1. Copyright
+		3.2. Social Icon
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+Color codes :
+------------
+
+# Html Background   	      : #F4F7F9;
+# Navigation Border 	      : #E2E5E7;
+# Navigation a 			      : #65757E;
+# Navigation Hover 	  	      : #0087D6;
+# Navigation background       : #FFFFFF;
+# Content Background          : #FFFFFF;
+# Content Border    	      : #E0E7EC;
+# Content Active		      : #414141;
+# Header h5    			      : #414141;
+# Header h4    			      : #616161;
+# Label,small			      : #0087D6;
+# Figcaption			      : #414141;
+# Video Header Background     : #EDEEEF;
+# Video Footer a,span         : #FF7D37;
+# Footer Background           : #333333;
+# Footer Social Border        : #919191;
+# Footer Social Hover         : #0087D6;
+# Button Color                : #FF7D37;
+# Button Hover                : #F06817;
+# a (standard) 			      : #818181;
+# a (visited)  			      : #414141;
+# a (active)   			      : #414141;
+-------------------------------------------------------------------*/
+
+/*
+GOOGLE FONTS
+--------------------------------------------------------------------*/
+/*@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro');*/
+
+@font-face {
+	font-family: "Roboto", sans-serif;
+	src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Source Sans Pro", sans-serif;
+	src: url("../fonts/SourceSansPro-Black.ttf") format("truetype"),
+		url("../fonts/SourceSansPro-Bold.ttf") format("truetype"),
+		url("../fonts/SourceSansPro-Regular.ttf") format("truetype"),
+		url("../fonts/SourceSansPro-Semibold.ttf") format("truetype");
+}
+
+/* ==========================================================================
+Base styles: 
+=============================================================================*/
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+html {
+	color: #818181;
+	background-color: #f4f7f9;
+	font-size: 12px;
+	line-height: 1.3333333;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	background-color: #f4f7f9;
+	font-family: "Roboto", sans-serif;
+	color: #818181;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.33333;
+	background-color: #f4f7f9;
+	-webkit-text-size-adjust: 100%;
+	-webkit-overflow-scrolling: touch;
+	-webkit-font-smoothing: antialiased !important;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+/*
+   * Remove the gap between images, videos, audio and canvas
+*/
+audio,
+canvas,
+img,
+video {
+	vertical-align: middle;
+}
+a,
+a:active,
+a:focus,
+a:active {
+	text-decoration: none !important;
+	outline: none;
+}
+ul {
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Source Sans Pro", sans-serif;
+	color: #818181;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+h1 {
+}
+h2 {
+}
+h3 {
+	font-size: 25.87px;
+}
+h4 {
+	color: #616161;
+	font-size: 21px;
+}
+h5 {
+	color: #414141;
+	font-size: 18px;
+}
+h6 {
+}
+button,
+button:hover,
+button:focus {
+	border: 0;
+	background: none;
+	outline: none;
+}
+figure {
+	border: 2px solid #e0e7ec;
+}
+figcaption {
+	color: #414141;
+	font-family: "Source Sans Pro", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+}
+label {
+	color: #0087d6;
+	font-size: 21px;
+	font-family: "Source Sans Pro", sans-serif;
+	margin: 0;
+	padding-left: 0;
+}
+label small {
+	font-size: 18px;
+}
+img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* ==========================================================================
+Page Design: 
+=============================================================================*/
+/*
+Content Design
+-----------------------------------------------------*/
+/*----- Raugh -----*/
+
+body {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	font-family: "Monoton", cursive;
+}
+.showcase {
+	height: 100vh;
+	width: 100vw;
+}
+.video-box {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+video {
+	width: 100%;
+}
+@media screen and (max-width: 1400px) {
+	video {
+		height: 100vh;
+		width: initial;
+	}
+}
+
+nav {
+	transition: all 0.2s ease;
+	animation-name: navigation;
+	animation-duration: 2.5s;
+}
+.navbar-brand {
+	font-size: 4.25rem !important;
+	position: relative;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	padding-left: 60px;
+	padding-top: 50px;
+}
+.navbar-brand span {
+	display: block;
+
+	animation-name: roy;
+	animation-duration: 3s;
+}
+@keyframes roy {
+	0% {
+		transform: translateY(100px);
+	}
+	0% {
+		transform: translateY(100px);
+	}
+	50% {
+		transform: translateY(100px);
+	}
+	70% {
+		transform: translateY(-25px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+/* .navbar-brand::before {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	background: #fff;
+	animation: hr1;
+	animation-duration: 7s;
+}
+@keyframes hr1 {
+	0% {
+		transform: translateX(-500px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+.navbar-brand::after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	background: #fff;
+	animation: hr2;
+	animation-duration: 7s;
+}
+@keyframes hr2 {
+	0% {
+		transform: translateX(-500px);
+	}
+	10% {
+		transform: translateX(-500px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+} */
+
+@keyframes navigation {
+	0% {
+		transform: translateY(-100px);
+	}
+	30% {
+		transform: translateY(-100px);
+	}
+	60% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+a.nav-link {
+	font-size: 1.3rem;
+	font-family: "Bungee";
+}
+li.nav-item {
+	padding: 0 20px;
+}
+ul.navbar-nav {
+	padding-right: 80px !important;
+}
+@media screen and (max-width: 575px) {
+	ul.navbar-nav {
+		padding-right: 0 !important;
+		align-items: flex-end;
+	}
+}
+.nav-link {
+	position: relative;
+}
+.nav-link::after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	animation: hr1;
+	animation-duration: 7s;
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+.nav-link:hover::after {
+	opacity: 1;
+	transform: translateY(-5px);
+}
+button.navbar-toggler {
+	margin-left: auto;
+	margin-right: 15px;
+}
